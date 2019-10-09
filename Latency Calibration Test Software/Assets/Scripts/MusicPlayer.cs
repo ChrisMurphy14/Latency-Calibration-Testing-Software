@@ -1,19 +1,21 @@
 ﻿//////////////////////////////////////////////////
 // Author:              Chris Murphy
 // Date created:        30.09.19
-// Date last edited:    30.09.19
+// Date last edited:    09.10.19
 //////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 
+// The class used to play a song while displaying the associated rhythm gameplay input prompts.
 [RequireComponent(typeof(AudioSource))]
-// The class used to play a song and display the associated rhythm gameplay input prompts.
 public class MusicPlayer : MonoBehaviour
 {
+    public List<NoteInputHitbox> InputHitboxes; // A list containing the hitboxes for each associated note pitch/player input.
     public Song SongToPlay;
     public float InputWindowDuration;
+    public float InputRefractoryDuration; // The duration after the input window is activated for which it cannot be reactivated.
     public float DebugLatencyOffset; // DEBUG 
     // public float VideoLatencyOffset;
     // public float AudioLatencyOffset;
@@ -35,6 +37,12 @@ public class MusicPlayer : MonoBehaviour
 
     private void Start()
     {              
+        foreach(NoteInputHitbox hitbox in InputHitboxes)
+        {
+            hitbox.ActivationDuration = InputWindowDuration;
+            hitbox.ActiveRefractoryDuration = InputRefractoryDuration;
+        }
+
         audioSource.Play();
     }
 
