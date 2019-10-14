@@ -16,7 +16,7 @@ public class NoteInputHitbox : MonoBehaviour
     public Sprite InactiveSprite;
     public Transform InputPromptPrefab; // The prefab used to spawn input prompts which move towards and interact with the hitbox.
     public Vector2 InputPromptSpawnPosOffset; // The position offset from the hitbox at which to spawn input prompts.
-    public KeyCode ActivateKeycode;    
+    public KeyCode ActivateKeycode;
     public float ActivationDuration; // The duration for which the hitbox is active after the input key is pressed.
     public float ActiveRefractoryDuration; // The duration after the hitbox is activated for which the player cannot re-activate it - prevents the player from repeatedly tapping the key instead of timing the input correctly.    
 
@@ -34,7 +34,7 @@ public class NoteInputHitbox : MonoBehaviour
     private Collider2D hitboxCollider;
     private SpriteRenderer spriteRenderer;
     private float stateChangeTimer; // A timer which disabled the hitbox from toggling between active and inactive while counting down.
-       
+
     private void Awake()
     {
         hitboxCollider = GetComponent<Collider2D>();
@@ -80,4 +80,6 @@ public class NoteInputHitbox : MonoBehaviour
 
         stateChangeTimer = ActiveRefractoryDuration;
     }
+
+    
 }

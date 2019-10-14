@@ -132,6 +132,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Input Hitbox - Left
       objectReference: {fileID: 0}
+    - target: {fileID: 2131274294053564504, guid: 1b5688c08873acb44ae8f6738381d679,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2131274294053564506, guid: 1b5688c08873acb44ae8f6738381d679,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -211,6 +216,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Input Hitbox - Right
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131274294053564504, guid: 1b5688c08873acb44ae8f6738381d679,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2131274294053564506, guid: 1b5688c08873acb44ae8f6738381d679,
         type: 3}
@@ -296,6 +306,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -311,6 +322,18 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a462519154dd8c046953a5e64e52d7a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -415,7 +438,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -570,6 +593,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Input Hitbox - Up
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131274294053564504, guid: 1b5688c08873acb44ae8f6738381d679,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2131274294053564506, guid: 1b5688c08873acb44ae8f6738381d679,
         type: 3}

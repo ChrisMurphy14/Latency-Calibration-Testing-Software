@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\MusicPlayer.cs" />
     <Compile Include="Assets\Scripts\NoteInputHitbox.cs" />
     <Compile Include="Assets\Scripts\NoteInputPrompt.cs" />
+    <Compile Include="Assets\Scripts\Shake2D.cs" />
     <Compile Include="Assets\Scripts\Song.cs" />
     <None Include="Assets\Third-Party\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
     <Reference Include="Unity.Timeline.Editor">

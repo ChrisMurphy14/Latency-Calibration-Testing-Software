@@ -51,8 +51,8 @@ public class MusicPlayer : MonoBehaviour
         songPosInSeconds = (float)(AudioSettings.dspTime - songStartTime) - DebugLatencyOffset;
         songPosInBeats = songPosInSeconds / SongToPlay.SecondsPerBeat;
 
-        if ((int)songPosInBeats > prevBeatCount)
-            Debug.Log("Beat: " + (int)songPosInBeats);
+        //if ((int)songPosInBeats > prevBeatCount)
+            //Debug.Log("Beat: " + (int)songPosInBeats);
         //    Camera.main.GetComponent<Camera>().backgroundColor = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
         prevBeatCount = (int)songPosInBeats;
     }
