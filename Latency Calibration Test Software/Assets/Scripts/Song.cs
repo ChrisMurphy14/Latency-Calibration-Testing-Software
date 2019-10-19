@@ -1,7 +1,7 @@
 ﻿//////////////////////////////////////////////////
 // Author:              Chris Murphy
 // Date created:        05.10.19
-// Date last edited:    09.10.19
+// Date last edited:    19.10.19
 //////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
@@ -30,10 +30,10 @@ public struct SongNote
 // A song class containing both the audio track and additional rhythm gameplay data.
 public class Song : MonoBehaviour
 {   
-    public AudioClip AudioTrack;   
-    public float BPM;    
+    public AudioClip AudioTrack;
     public List<SongNote> Notes; // The list containing all of the notes to be input throughout the playtime of the song.
-    
+    public float BPM;   
+        
     public float SecondsPerBeat
     {
         get { return 60.0f / BPM; }

@@ -80,6 +80,4 @@ public class NoteInputHitbox : MonoBehaviour
 
         stateChangeTimer = ActiveRefractoryDuration;
     }
-
-    
 }

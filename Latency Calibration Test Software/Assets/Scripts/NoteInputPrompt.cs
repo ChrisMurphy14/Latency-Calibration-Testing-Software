@@ -1,7 +1,7 @@
 ﻿//////////////////////////////////////////////////
 // Author:              Chris Murphy
 // Date created:        09.10.19
-// Date last edited:    14.10.19
+// Date last edited:    19.10.19
 //////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
@@ -16,6 +16,7 @@ public class NoteInputPrompt : MonoBehaviour
 {
     public AudioClip SuccessfulInputSound;
     public Vector2 InputHitboxPosition; // The posititon to which the prompt will travel.
+    public NotePitch Pitch;
     public bool SuccessfulInputStopPromptMovement;
     public float ReachInputHitboxTime; // The time at which the prompt will reach the input hitbox position.
     public float ExistAfterReachingInputHitboxDuration; // The duration which the prompt exists after passing the hitbox if no input was entered at the same time.
@@ -67,6 +68,8 @@ public class NoteInputPrompt : MonoBehaviour
 
     private IEnumerator SuccessfulInputDestroyCoroutine()
     {
+        GetComponent<Collider2D>().enabled = false;
+
         Camera.main.GetComponent<Shake2D>().Shake(SuccessfulInputScreenShakeDuration, SuccessfulInputScreenShakeMagnitude);
         if (SuccessfulInputSound)
             GetComponent<AudioSource>().PlayOneShot(SuccessfulInputSound);

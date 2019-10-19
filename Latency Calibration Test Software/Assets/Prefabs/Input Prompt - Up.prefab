@@ -123,6 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SuccessfulInputSound: {fileID: 0}
   InputHitboxPosition: {x: 0, y: 0}
+  Pitch: 1
   SuccessfulInputStopPromptMovement: 1
   ReachInputHitboxTime: 0
   ExistAfterReachingInputHitboxDuration: 1

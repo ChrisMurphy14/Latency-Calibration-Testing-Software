@@ -421,10 +421,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59da63faf9173af4b95b7f1ca8e00042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InputHitboxes: []
+  InputHitboxes:
+  - {fileID: 1062535045}
+  - {fileID: 1982525433}
+  - {fileID: 1815125965}
   SongToPlay: {fileID: 877413406}
-  InputWindowDuration: 0
-  InputRefractoryDuration: 0
+  InputWindowDuration: 0.1
+  InputRefractoryDuration: 0.1
+  NotePromptTravelDuration: 2
   DebugLatencyOffset: 0.25
 --- !u!82 &729359083
 AudioSource:
@@ -438,7 +442,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.4
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -566,8 +570,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AudioTrack: {fileID: 8300000, guid: 222b0337d5ce8084d96238daef4d3a16, type: 3}
+  Notes:
+  - Pitch: 0
+    BeatPosInSong: 33
+  - Pitch: 0
+    BeatPosInSong: 41
+  - Pitch: 0
+    BeatPosInSong: 49
+  - Pitch: 0
+    BeatPosInSong: 57
+  - Pitch: 1
+    BeatPosInSong: 34
+  - Pitch: 1
+    BeatPosInSong: 42
+  - Pitch: 1
+    BeatPosInSong: 50
+  - Pitch: 1
+    BeatPosInSong: 58
+  - Pitch: 1
+    BeatPosInSong: 36
+  - Pitch: 1
+    BeatPosInSong: 44
+  - Pitch: 1
+    BeatPosInSong: 52
+  - Pitch: 1
+    BeatPosInSong: 60
+  - Pitch: 2
+    BeatPosInSong: 37
+  - Pitch: 2
+    BeatPosInSong: 45
+  - Pitch: 2
+    BeatPosInSong: 53
+  - Pitch: 2
+    BeatPosInSong: 61
   BPM: 140
-  Notes: []
 --- !u!4 &877413407
 Transform:
   m_ObjectHideFlags: 0
@@ -582,6 +618,42 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1062535045 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2131274294053564507, guid: 1b5688c08873acb44ae8f6738381d679,
+    type: 3}
+  m_PrefabInstance: {fileID: 188556465}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93565ba60f69e3b4dac3d51f03d59a7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1815125965 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2131274294053564507, guid: 1b5688c08873acb44ae8f6738381d679,
+    type: 3}
+  m_PrefabInstance: {fileID: 200851820}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93565ba60f69e3b4dac3d51f03d59a7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1982525433 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2131274294053564507, guid: 1b5688c08873acb44ae8f6738381d679,
+    type: 3}
+  m_PrefabInstance: {fileID: 2131274293877144956}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93565ba60f69e3b4dac3d51f03d59a7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2131274293877144956
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 6291142589036069162, guid: 2d437679df569314bb739b421b365f29,
         type: 3}
       propertyPath: m_Name
-      value: Input Prompt - Left
+      value: Input Prompt - Left Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6291142589036069156, guid: 2d437679df569314bb739b421b365f29,
         type: 3}
@@ -66,6 +66,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6291142589036069157, guid: 2d437679df569314bb739b421b365f29,
+        type: 3}
+      propertyPath: Pitch
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d437679df569314bb739b421b365f29, type: 3}
