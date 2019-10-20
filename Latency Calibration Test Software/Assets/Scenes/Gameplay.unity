@@ -203,6 +203,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 429097088215771083, guid: 05eb30c5e9de5a740a2996b09160da8d,
         type: 3}
+    - target: {fileID: 2131274294053564500, guid: 1b5688c08873acb44ae8f6738381d679,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131274294053564500, guid: 1b5688c08873acb44ae8f6738381d679,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.56
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b5688c08873acb44ae8f6738381d679, type: 3}
 --- !u!1001 &200851820
@@ -293,6 +303,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 997677420407942512, guid: cbe06927247ffae45935336c83d061e2,
         type: 3}
+    - target: {fileID: 2131274294053564500, guid: 1b5688c08873acb44ae8f6738381d679,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131274294053564500, guid: 1b5688c08873acb44ae8f6738381d679,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.56
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b5688c08873acb44ae8f6738381d679, type: 3}
 --- !u!1 &519420028
@@ -427,7 +447,7 @@ MonoBehaviour:
   - {fileID: 1815125965}
   SongToPlay: {fileID: 877413406}
   InputWindowDuration: 0.1
-  InputRefractoryDuration: 0.1
+  InputRefractoryDuration: 0.05
   NotePromptTravelDuration: 2
   DebugLatencyOffset: 0.25
 --- !u!82 &729359083
@@ -603,6 +623,102 @@ MonoBehaviour:
     BeatPosInSong: 53
   - Pitch: 2
     BeatPosInSong: 61
+  - Pitch: 2
+    BeatPosInSong: 63
+  - Pitch: 0
+    BeatPosInSong: 64
+  - Pitch: 1
+    BeatPosInSong: 65
+  - Pitch: 2
+    BeatPosInSong: 67
+  - Pitch: 2
+    BeatPosInSong: 70
+  - Pitch: 0
+    BeatPosInSong: 72
+  - Pitch: 1
+    BeatPosInSong: 73.5
+  - Pitch: 2
+    BeatPosInSong: 75
+  - Pitch: 2
+    BeatPosInSong: 78
+  - Pitch: 1
+    BeatPosInSong: 78.5
+  - Pitch: 0
+    BeatPosInSong: 80
+  - Pitch: 1
+    BeatPosInSong: 81
+  - Pitch: 2
+    BeatPosInSong: 83
+  - Pitch: 2
+    BeatPosInSong: 86
+  - Pitch: 0
+    BeatPosInSong: 86.5
+  - Pitch: 1
+    BeatPosInSong: 87
+  - Pitch: 2
+    BeatPosInSong: 87.5
+  - Pitch: 2
+    BeatPosInSong: 88
+  - Pitch: 2
+    BeatPosInSong: 89.5
+  - Pitch: 1
+    BeatPosInSong: 89.75
+  - Pitch: 0
+    BeatPosInSong: 90
+  - Pitch: 1
+    BeatPosInSong: 91
+  - Pitch: 2
+    BeatPosInSong: 92.5
+  - Pitch: 1
+    BeatPosInSong: 92.75
+  - Pitch: 0
+    BeatPosInSong: 93
+  - Pitch: 0
+    BeatPosInSong: 94
+  - Pitch: 1
+    BeatPosInSong: 94.5
+  - Pitch: 1
+    BeatPosInSong: 95
+  - Pitch: 2
+    BeatPosInSong: 95.5
+  - Pitch: 1
+    BeatPosInSong: 96
+  - Pitch: 2
+    BeatPosInSong: 102
+  - Pitch: 1
+    BeatPosInSong: 104
+  - Pitch: 0
+    BeatPosInSong: 109
+  - Pitch: 1
+    BeatPosInSong: 110
+  - Pitch: 2
+    BeatPosInSong: 111
+  - Pitch: 0
+    BeatPosInSong: 112
+  - Pitch: 1
+    BeatPosInSong: 114
+  - Pitch: 2
+    BeatPosInSong: 115
+  - Pitch: 1
+    BeatPosInSong: 117.5
+  - Pitch: 2
+    BeatPosInSong: 118
+  - Pitch: 2
+    BeatPosInSong: 119
+  - Pitch: 1
+    BeatPosInSong: 120
+  - Pitch: 0
+    BeatPosInSong: 123.5
+  - Pitch: 1
+    BeatPosInSong: 123.75
+  - Pitch: 2
+    BeatPosInSong: 124
+  - Pitch: 1
+    BeatPosInSong: 124.5
+  - Pitch: 1
+    BeatPosInSong: 126.5
+  - Pitch: 2
+    BeatPosInSong: 127
   BPM: 140
 --- !u!4 &877413407
 Transform:
@@ -737,5 +853,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6291142589036069156, guid: 2d437679df569314bb739b421b365f29,
         type: 3}
+    - target: {fileID: 2131274294053564500, guid: 1b5688c08873acb44ae8f6738381d679,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b5688c08873acb44ae8f6738381d679, type: 3}
