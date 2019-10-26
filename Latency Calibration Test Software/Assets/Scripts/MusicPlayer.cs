@@ -1,11 +1,13 @@
 ﻿//////////////////////////////////////////////////
 // Author:              Chris Murphy
 // Date created:        30.09.19
-// Date last edited:    19.10.19
+// Date last edited:    26.10.19
 //////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 // The class used to play a song while displaying the associated rhythm gameplay input prompts.
@@ -14,6 +16,7 @@ public class MusicPlayer : MonoBehaviour
 {
     public List<NoteInputHitbox> InputHitboxes; // A list containing the hitboxes for each associated note pitch/player input.   
     public Song SongToPlay;
+    public Text SongCompletedText; // The UI text which appears to give the player instructions once the song is over.    
     public float InputWindowDuration;
     public float InputRefractoryDuration; // The duration after the input window is activated for which it cannot be reactivated.
     public float NotePromptTravelDuration; // The duration between each prompt appearing and reaching the associated hitbox.
@@ -53,6 +56,8 @@ public class MusicPlayer : MonoBehaviour
             InputHitboxes[i].ActiveRefractoryDuration = InputRefractoryDuration;
         }
 
+        SongCompletedText.enabled = false;
+
         audioSource.Play();
     }
 
@@ -62,30 +67,42 @@ public class MusicPlayer : MonoBehaviour
         songPosInBeats = songPosInSeconds / SongToPlay.SecondsPerBeat;
 
         if (SongToPlay.Notes.Count > 0)
-        {            
-            float arrivalPosInSeconds = (SongToPlay.Notes[0].BeatPosInSong) * SongToPlay.SecondsPerBeat; // The song position in seconds at which the next note should arrive at the associated hitbox.
-            float spawnPosInSeconds = arrivalPosInSeconds - NotePromptTravelDuration; // The song position in seconds at which the note should be spawned.
-                       
-            if (songPosInSeconds >= spawnPosInSeconds)
-            {
-                NoteInputHitbox spawnHitbox = null; // The hitbox which the prompt will travel towards according to the pitch of the prompts that the hitbox spawns.
-                foreach (NoteInputHitbox hitbox in InputHitboxes)
-                {
-                    if (hitbox.InputPromptPrefab.GetComponent<NoteInputPrompt>().Pitch == SongToPlay.Notes[0].Pitch)
-                    {
-                        spawnHitbox = hitbox;
-                        break;
-                    }
-                }
-                spawnHitbox.SpawnInputPrompt((float)AudioSettings.dspTime + NotePromptTravelDuration);
+            UpdatePromptSpawning();
 
-                SongToPlay.Notes.RemoveAt(0);
-            }
-        }
+        if (songPosInBeats >= SongToPlay.SongDurationInBeats && !SongCompletedText.enabled)
+            EndSong();          
+        else if(SongCompletedText.enabled && Input.GetKeyDown(KeyCode.R))
+            SceneManager.LoadScene(0);
 
-        if ((int)songPosInBeats > prevBeatCount)        
+        if ((int)songPosInBeats > prevBeatCount)
             Debug.Log("Beat: " + (int)songPosInBeats); // DEBUG        
+        prevBeatCount = (int)songPosInBeats;           
+    }
 
-        prevBeatCount = (int)songPosInBeats;
+    private void UpdatePromptSpawning()
+    {
+        float arrivalPosInSeconds = (SongToPlay.Notes[0].BeatPosInSong) * SongToPlay.SecondsPerBeat; // The song position in seconds at which the next note should arrive at the associated hitbox.
+        float spawnPosInSeconds = arrivalPosInSeconds - NotePromptTravelDuration; // The song position in seconds at which the note should be spawned.
+
+        if (songPosInSeconds >= spawnPosInSeconds)
+        {
+            NoteInputHitbox spawnHitbox = null; // The hitbox which the prompt will travel towards according to the pitch of the prompts that the hitbox spawns.
+            foreach (NoteInputHitbox hitbox in InputHitboxes)
+            {
+                if (hitbox.InputPromptPrefab.GetComponent<NoteInputPrompt>().Pitch == SongToPlay.Notes[0].Pitch)
+                {
+                    spawnHitbox = hitbox;
+                    break;
+                }
+            }
+            spawnHitbox.SpawnInputPrompt((float)AudioSettings.dspTime + NotePromptTravelDuration);
+
+            SongToPlay.Notes.RemoveAt(0);
+        }
+    }
+
+    private void EndSong()
+    {
+        SongCompletedText.enabled = true;
     }
 }

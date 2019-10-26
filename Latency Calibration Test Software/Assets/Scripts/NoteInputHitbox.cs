@@ -1,7 +1,7 @@
 ﻿//////////////////////////////////////////////////
 // Author:              Chris Murphy
 // Date created:        09.10.19
-// Date last edited:    09.10.19
+// Date last edited:    26.10.19
 //////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
@@ -60,9 +60,6 @@ public class NoteInputHitbox : MonoBehaviour
             else if (hitboxCollider.enabled)
                 DeactivateHitbox();
         }
-
-        if (Input.GetKeyDown(KeyCode.Space)) // DEBUG
-            SpawnInputPrompt((float)AudioSettings.dspTime + 5.0f);
     }
 
     private void ActivateHitbox()

@@ -128,7 +128,7 @@ MonoBehaviour:
   ReachInputHitboxTime: 0
   ExistAfterReachingInputHitboxDuration: 1
   ExistAfterSuccessfuInputDuration: 1
-  SuccessfulInputScaleMultiplier: 1.2
+  SuccessfulInputScaleMultiplier: 1.5
   SuccessfulInputScreenShakeDuration: 0.1
   SuccessfulInputScreenShakeMagnitude: 0.05
 --- !u!50 &7379400797446237738

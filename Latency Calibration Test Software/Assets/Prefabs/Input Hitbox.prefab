@@ -122,7 +122,7 @@ MonoBehaviour:
   ActiveSprite: {fileID: 21300000, guid: f588d850485d0ae479d73cf3bd0b7b00, type: 3}
   InactiveSprite: {fileID: 21300000, guid: eb5f6e2757c821940b69cf1456f7865a, type: 3}
   InputPromptPrefab: {fileID: 0}
-  InputPromptSpawnPosOffset: {x: 0, y: 7}
+  InputPromptSpawnPosOffset: {x: 0, y: 8}
   ActivateKeycode: 273
   ActivationDuration: 0.1
   ActiveRefractoryDuration: 0.1
