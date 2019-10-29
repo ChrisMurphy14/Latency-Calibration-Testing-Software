@@ -1,7 +1,7 @@
 ﻿//////////////////////////////////////////////////
 // Author:              Chris Murphy
 // Date created:        09.10.19
-// Date last edited:    19.10.19
+// Date last edited:    29.10.19
 //////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
@@ -15,6 +15,7 @@ using UnityEngine;
 public class NoteInputPrompt : MonoBehaviour
 {
     public AudioClip SuccessfulInputSound;
+    public NoteInputHitbox InputHitbox;
     public Vector2 InputHitboxPosition; // The posititon to which the prompt will travel.
     public NotePitch Pitch;
     public bool SuccessfulInputStopPromptMovement;
@@ -27,9 +28,11 @@ public class NoteInputPrompt : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
     private Vector2 spawnPos;
+    private bool wasInputHitboxActivePreviousFrame;
     private bool isSuccessfulInputDestroyCoroutineRunning;
     private float spawnTime; // The time value when the input prompt is activated.
     private float destroyTimer; // The self-destruct timer which starts after the prompt reaches the hitbox.
+    private float closestInputOffset = 999.99f; // The travel time offset of the prompt in seconds when it's nearest to the activated input hitbox (i.e. how far off was the player input from being perfect) - has a value of 999.99f if the hitbox hasn't been activated while the prompt has been active. 
 
     private bool hasReachedHitbox
     {
@@ -52,22 +55,39 @@ public class NoteInputPrompt : MonoBehaviour
         if (!(isSuccessfulInputDestroyCoroutineRunning && SuccessfulInputStopPromptMovement))
             transform.position = Vector2.LerpUnclamped(spawnPos, InputHitboxPosition, ((float)AudioSettings.dspTime - spawnTime) / (ReachInputHitboxTime - spawnTime)); // Lerps between the spawn position and the hitbox position so that it will arrive at the hitbox at the specified time, then continues travelling in the same direction.
 
+        if (!wasInputHitboxActivePreviousFrame && InputHitbox.GetComponent<Collider2D>().enabled)
+        {
+            float inputOffset = (float)AudioSettings.dspTime - ReachInputHitboxTime;
+            if (Mathf.Abs(inputOffset) < Mathf.Abs(closestInputOffset))
+                closestInputOffset = inputOffset;
+        }
+
         if (hasReachedHitbox && !isSuccessfulInputDestroyCoroutineRunning)
         {
             destroyTimer += Time.deltaTime;
             if (destroyTimer >= ExistAfterReachingInputHitboxDuration)
+            {
+                InputHitbox.RegisterPromptDestroyed(false, closestInputOffset);
                 Destroy(gameObject);
+            }
         }
+    }
+
+    private void LateUpdate()
+    {
+        wasInputHitboxActivePreviousFrame = InputHitbox.GetComponent<Collider2D>().enabled;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "InputHitbox")
+        if (collision.gameObject.GetComponent<NoteInputHitbox>() == InputHitbox)
             StartCoroutine("SuccessfulInputDestroyCoroutine");
     }
 
     private IEnumerator SuccessfulInputDestroyCoroutine()
     {
+        InputHitbox.RegisterPromptDestroyed(true, closestInputOffset);
+
         GetComponent<Collider2D>().enabled = false;
 
         Camera.main.GetComponent<Shake2D>().Shake(SuccessfulInputScreenShakeDuration, SuccessfulInputScreenShakeMagnitude);
