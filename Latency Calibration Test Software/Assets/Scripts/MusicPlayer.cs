@@ -1,7 +1,7 @@
 ﻿//////////////////////////////////////////////////
 // Author:              Chris Murphy
 // Date created:        30.09.19
-// Date last edited:    29.10.19
+// Date last edited:    31.10.19
 //////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
@@ -18,12 +18,20 @@ public class MusicPlayer : MonoBehaviour
     public Song SongToPlay;
     public Text NotesHitText; // The UI text which shows the number of note prompts that the player has hit.
     public Text NotesMissedText; // The UI text which shows the number of note prompts that the player has missed.
+    public Text LatencyOffsetText; // The UI text which shows the current latency offset.
     public Text AverageInputOffsetText; // The UI text which shows the average offset of each player input from the associated prompts.
+    public Text SongStartText; // The UI text which is displayed until the player begins the song.
     public Text SongCompletedText; // The UI text which appears to give the player instructions once the song is over.       
+    public bool CanReplay = true;
     public float InputWindowDuration;
     public float InputRefractoryDuration; // The duration after the input window is activated for which it cannot be reactivated.
     public float NotePromptTravelDuration; // The duration between each prompt appearing and reaching the associated hitbox.
     public float LatencyOffset; // The offset in seconds between the audio and the gameplay associated with the audio.
+
+    public bool IsSongCompleted
+    {
+        get { return SongCompletedText.enabled; }
+    }
 
     // The property used to get the average closest offset of each input from the associated prompt arriving at the hitbox (i.e. the average distance in seconds that the player misses getting a 'perfect' input timing) - returns 999.99f if the list of closest input offsets for all input hitboxes are currently empty.
     public float AverageClosestInputOffset
@@ -31,9 +39,9 @@ public class MusicPlayer : MonoBehaviour
         get
         {
             bool hitboxClosestInputOffsetsAreEmpty = true;
-            foreach(NoteInputHitbox inputHitbox in InputHitboxes)
+            foreach (NoteInputHitbox inputHitbox in InputHitboxes)
             {
-                if(inputHitbox.AverageClosestInputOffset != 999.99f)
+                if (inputHitbox.AverageClosestInputOffset != 999.99f)
                 {
                     hitboxClosestInputOffsetsAreEmpty = false;
                     break;
@@ -85,14 +93,13 @@ public class MusicPlayer : MonoBehaviour
     private float songStartTime;  // The time value when the song started playing.    
     private int prevBeatCount; // DEBUG
     private uint totalNotesCount; // The total number of note prompts in the assigned song. 
-    
 
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.playOnAwake = false;
-        audioSource.clip = SongToPlay.AudioTrack;
-        songStartTime = (float)AudioSettings.dspTime;
+        audioSource.loop = true;
+        audioSource.clip = SongToPlay.AudioTrack;        
     }
 
     private void Start()
@@ -114,39 +121,49 @@ public class MusicPlayer : MonoBehaviour
 
         totalNotesCount = (uint)SongToPlay.Notes.Count;
 
+        SongStartText.enabled = true;
         SongCompletedText.enabled = false;
-
-        audioSource.Play();
     }
 
     private void Update()
     {
-        songPosInSeconds = (float)(AudioSettings.dspTime - songStartTime) - LatencyOffset;
-        songPosInBeats = songPosInSeconds / SongToPlay.SecondsPerBeat;
+        if (!audioSource.isPlaying && Input.GetKeyDown(KeyCode.R))
+            StartSong();
 
-        if (SongToPlay.Notes.Count > 0)
-            UpdatePromptSpawning();
+        if(audioSource.isPlaying)
+        {
+            songPosInSeconds = (float)(AudioSettings.dspTime - songStartTime) - LatencyOffset;
+            songPosInBeats = songPosInSeconds / SongToPlay.SecondsPerBeat;
 
-        if (songPosInBeats >= SongToPlay.SongDurationInBeats && !SongCompletedText.enabled)
-            EndSong();
-        else if (SongCompletedText.enabled && Input.GetKeyDown(KeyCode.R))
-            SceneManager.LoadScene(0);
+            if (SongToPlay.Notes.Count > 0)
+                UpdatePromptSpawning();
 
-        //if ((int)songPosInBeats > prevBeatCount)
-        //    Debug.Log("Beat: " + (int)songPosInBeats); // DEBUG        
-        prevBeatCount = (int)songPosInBeats;
+            if (songPosInBeats >= SongToPlay.SongDurationInBeats && !IsSongCompleted)
+                EndSong();            
+
+            //if ((int)songPosInBeats > prevBeatCount)
+            //    Debug.Log("Beat: " + (int)songPosInBeats); // DEBUG        
+            prevBeatCount = (int)songPosInBeats;
+        }
+
+        if (IsSongCompleted && CanReplay && IsSongCompleted && Input.GetKeyDown(KeyCode.R))
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void OnGUI()
-    {       
-        NotesHitText.text = NotesHitText.text.Remove(NotesHitText.text.LastIndexOf(' '));
-        NotesHitText.text += " " + TotalPromptsHitCount.ToString();
+    {
+        UpdateDisplayedGUITextValue(NotesHitText, TotalPromptsHitCount);
+        UpdateDisplayedGUITextValue(NotesMissedText, TotalPromptsMissedCount);
+        UpdateDisplayedGUITextValue(LatencyOffsetText, LatencyOffset);
+        UpdateDisplayedGUITextValue(AverageInputOffsetText, AverageClosestInputOffset);
+    }
 
-        NotesMissedText.text = NotesMissedText.text.Remove(NotesMissedText.text.LastIndexOf(' '));
-        NotesMissedText.text += " " + TotalPromptsMissedCount.ToString();
+    private void StartSong()
+    {
+        SongStartText.enabled = false;
 
-        AverageInputOffsetText.text = AverageInputOffsetText.text.Remove(AverageInputOffsetText.text.LastIndexOf(' '));
-        AverageInputOffsetText.text += " " + AverageClosestInputOffset.ToString();
+        songStartTime = (float)AudioSettings.dspTime;
+        audioSource.Play();
     }
 
     private void UpdatePromptSpawning()
@@ -174,5 +191,15 @@ public class MusicPlayer : MonoBehaviour
     private void EndSong()
     {
         SongCompletedText.enabled = true;
+    }
+
+    // Updates the float value appended to the end of one of the UI text elements used to display information to the player.
+    private void UpdateDisplayedGUITextValue(Text displayedText, float value)
+    {
+        if (displayedText)
+        {
+            displayedText.text = displayedText.text.Remove(displayedText.text.LastIndexOf(' '));
+            displayedText.text += " " + value.ToString();
+        }
     }
 }

@@ -1,7 +1,7 @@
 ﻿//////////////////////////////////////////////////
 // Author:              Chris Murphy
 // Date created:        09.10.19
-// Date last edited:    29.10.19
+// Date last edited:    30.10.19
 //////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
@@ -66,11 +66,8 @@ public class NoteInputHitbox : MonoBehaviour
         else
             promptsMissedCount++;
 
-        if (closestInputOffset != 999.99f)
-        {
-            closestInputOffsets.Add(closestInputOffset);
-            Debug.Log(closestInputOffset);
-        }
+        if (closestInputOffset != 999.99f)        
+            closestInputOffsets.Add(closestInputOffset);        
     }
 
 
