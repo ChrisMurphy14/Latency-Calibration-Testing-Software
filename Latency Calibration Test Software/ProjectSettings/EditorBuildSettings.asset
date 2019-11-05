@@ -15,6 +15,18 @@ EditorBuildSettings:
     path: Assets/Scenes/No Latency Offset.unity
     guid: 00749e0b0a29f854d9f1fcde0255f78d
   - enabled: 1
+    path: Assets/Scenes/Calibration - Gameplay.unity
+    guid: 86c94f38798595645812c9cd6b54c889
+  - enabled: 1
+    path: Assets/Scenes/Gameplay - Gameplay.unity
+    guid: fafc97d9ac45602439842d2470e83277
+  - enabled: 1
+    path: Assets/Scenes/Calibration - Beat Matching.unity
+    guid: 5b7054346ecfe2e46ab70b1ffd727ac4
+  - enabled: 1
+    path: Assets/Scenes/Gameplay - Beat Matching.unity
+    guid: a4e1334c34baabb45a68fdef0251bf29
+  - enabled: 1
     path: Assets/Scenes/Finish.unity
     guid: de496d1c783124e4e86e7e8b2d491a4e
   m_configObjects: {}

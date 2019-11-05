@@ -256,7 +256,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Test complete
+  m_Text: 'Test complete
+
+
+    STATS!!!!!'
 --- !u!222 &96784977
 CanvasRenderer:
   m_ObjectHideFlags: 0

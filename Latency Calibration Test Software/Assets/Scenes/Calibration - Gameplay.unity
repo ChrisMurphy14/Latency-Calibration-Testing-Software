@@ -258,7 +258,9 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Song complete!
 
-    Press ''Spacebar'' to continue'
+    If the latency offset value feels ''correct'', press ''Spacebar'' to continue
+
+    If you want to continue adjusting the value, press ''R'' to restart the song'
 --- !u!222 &96784977
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -426,13 +428,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Latency Offset (Debug): 0'
+  m_Text: 'Latency Offset: 0'
 --- !u!222 &194312964
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -620,6 +622,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 202284712}
   m_CullTransparentMesh: 0
+--- !u!1 &207529916
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 207529918}
+  - component: {fileID: 207529917}
+  m_Layer: 0
+  m_Name: Test Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &207529917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207529916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecabdf34658864944ac0fbd8afd75a51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &207529918
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207529916}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &385533790
 GameObject:
   m_ObjectHideFlags: 0
@@ -775,7 +820,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.24705882, g: 0.074509814, b: 0.08303955, a: 0}
+  m_BackGroundColor: {r: 0.23529412, g: 0.074509814, b: 0.23529412, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -833,6 +878,7 @@ GameObject:
   - component: {fileID: 729359084}
   - component: {fileID: 729359083}
   - component: {fileID: 729359082}
+  - component: {fileID: 729359085}
   m_Layer: 0
   m_Name: Music Player
   m_TagString: MusicPlayer
@@ -863,7 +909,7 @@ MonoBehaviour:
   AverageInputOffsetText: {fileID: 815672699}
   SongStartText: {fileID: 202284714}
   SongCompletedText: {fileID: 96784976}
-  CanReplay: 0
+  CanReplay: 1
   InputWindowDuration: 0.1
   InputRefractoryDuration: 0.05
   NotePromptTravelDuration: 2
@@ -978,6 +1024,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &729359085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729359081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d2369746b70aec4dbfc7c588bddaacd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DestroyAllPromptsOnOffsetValueChange: 1
+  AdjustmentMagnitude: 0.05
+  UpperBound: 0.5
+  LowerBound: -0.5
 --- !u!1 &815672697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1042,7 +1104,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
@@ -1121,7 +1183,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1323,49 +1385,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93565ba60f69e3b4dac3d51f03d59a7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1254251646
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1254251648}
-  - component: {fileID: 1254251647}
-  m_Layer: 0
-  m_Name: Test Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1254251647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254251646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecabdf34658864944ac0fbd8afd75a51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1254251648
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254251646}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1303958272
 GameObject:
   m_ObjectHideFlags: 0
@@ -1400,8 +1419,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -274.6, y: -34}
-  m_SizeDelta: {x: 500, y: 30}
+  m_AnchoredPosition: {x: -284, y: -34}
+  m_SizeDelta: {x: 518.8, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1303958274
 MonoBehaviour:
@@ -1436,11 +1455,15 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Test Stage 2 - No Latency Offset:\nPlay the song once with no latency offset
-    to gather baseline data for the following stages.\n\nThe timing of the note prompts
-    will likely feel very 'wrong', and you will probably miss the majority of them
-    - this is intentional. \n\nDo your best to press the prompts in time to the music
-    anyway."
+  m_Text: 'Test Stage 3a - Latency Calibration (Type A):
+
+    Tap the ''W'' and ''S'' keys to increase/decrease the latency offset value until
+    the note prompts feel like they''re hitting the arrows at the correct time with
+    the music.
+
+
+    Take as long as you need to get the value feeling ''correct'' before continuing
+    to the next stage - the song can be restarted each time it reaches the end.'
 --- !u!222 &1303958275
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1537,7 +1560,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0

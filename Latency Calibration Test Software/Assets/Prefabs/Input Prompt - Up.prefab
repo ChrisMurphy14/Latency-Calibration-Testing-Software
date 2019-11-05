@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2212078785883586262}
   m_Layer: 0
   m_Name: Input Prompt - Up
-  m_TagString: Untagged
+  m_TagString: InputPrompt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,6 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SuccessfulInputSound: {fileID: 0}
+  InputHitbox: {fileID: 0}
   InputHitboxPosition: {x: 0, y: 0}
   Pitch: 1
   SuccessfulInputStopPromptMovement: 1

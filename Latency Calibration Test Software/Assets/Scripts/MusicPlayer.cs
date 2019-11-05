@@ -1,7 +1,7 @@
 ﻿//////////////////////////////////////////////////
 // Author:              Chris Murphy
 // Date created:        30.09.19
-// Date last edited:    31.10.19
+// Date last edited:    05.11.19
 //////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
@@ -87,14 +87,14 @@ public class MusicPlayer : MonoBehaviour
     }
 
 
-    private AudioSource audioSource;
-    private float songPosInSeconds; // The current play position of the song in seconds.    
-    private float songPosInBeats; // The current play position of the song in beats.   
-    private float songStartTime;  // The time value when the song started playing.    
-    private int prevBeatCount; // DEBUG
-    private uint totalNotesCount; // The total number of note prompts in the assigned song. 
+    protected AudioSource audioSource;
+    protected float songPosInSeconds; // The current play position of the song in seconds.    
+    protected float songPosInBeats; // The current play position of the song in beats.   
+    protected float songStartTime;  // The time value when the song started playing.    
+    protected int prevBeatCount; // DEBUG
+    protected uint totalNotesCount; // The total number of note prompts in the assigned song. 
 
-    private void Awake()
+    protected void Awake()
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.playOnAwake = false;
@@ -102,7 +102,7 @@ public class MusicPlayer : MonoBehaviour
         audioSource.clip = SongToPlay.AudioTrack;        
     }
 
-    private void Start()
+    protected void Start()
     {
         if (InputHitboxes.Count < 1)
             throw new System.Exception("Error: There must be at least one hitbox assigned to the InputHitboxes list.");
@@ -125,10 +125,10 @@ public class MusicPlayer : MonoBehaviour
         SongCompletedText.enabled = false;
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         if (!audioSource.isPlaying && Input.GetKeyDown(KeyCode.R))
-            StartSong();
+            StartSong(); 
 
         if(audioSource.isPlaying)
         {
@@ -144,13 +144,10 @@ public class MusicPlayer : MonoBehaviour
             //if ((int)songPosInBeats > prevBeatCount)
             //    Debug.Log("Beat: " + (int)songPosInBeats); // DEBUG        
             prevBeatCount = (int)songPosInBeats;
-        }
-
-        if (IsSongCompleted && CanReplay && IsSongCompleted && Input.GetKeyDown(KeyCode.R))
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }        
     }
 
-    private void OnGUI()
+    protected void OnGUI()
     {
         UpdateDisplayedGUITextValue(NotesHitText, TotalPromptsHitCount);
         UpdateDisplayedGUITextValue(NotesMissedText, TotalPromptsMissedCount);
@@ -158,7 +155,7 @@ public class MusicPlayer : MonoBehaviour
         UpdateDisplayedGUITextValue(AverageInputOffsetText, AverageClosestInputOffset);
     }
 
-    private void StartSong()
+    protected void StartSong()
     {
         SongStartText.enabled = false;
 
@@ -166,7 +163,7 @@ public class MusicPlayer : MonoBehaviour
         audioSource.Play();
     }
 
-    private void UpdatePromptSpawning()
+    protected virtual void UpdatePromptSpawning()
     {
         float arrivalPosInSeconds = (SongToPlay.Notes[0].BeatPosInSong) * SongToPlay.SecondsPerBeat; // The song position in seconds at which the next note should arrive at the associated hitbox.
         float spawnPosInSeconds = arrivalPosInSeconds - NotePromptTravelDuration; // The song position in seconds at which the note should be spawned.
@@ -188,13 +185,13 @@ public class MusicPlayer : MonoBehaviour
         }
     }
 
-    private void EndSong()
+    protected void EndSong()
     {
         SongCompletedText.enabled = true;
     }
 
     // Updates the float value appended to the end of one of the UI text elements used to display information to the player.
-    private void UpdateDisplayedGUITextValue(Text displayedText, float value)
+    protected void UpdateDisplayedGUITextValue(Text displayedText, float value)
     {
         if (displayedText)
         {

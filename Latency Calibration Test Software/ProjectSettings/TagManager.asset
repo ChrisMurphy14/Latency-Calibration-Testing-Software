@@ -6,6 +6,7 @@ TagManager:
   tags:
   - InputHitbox
   - MusicPlayer
+  - InputPrompt
   layers:
   - Default
   - TransparentFX
