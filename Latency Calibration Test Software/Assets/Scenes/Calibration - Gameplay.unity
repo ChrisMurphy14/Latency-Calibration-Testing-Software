@@ -1463,7 +1463,8 @@ MonoBehaviour:
 
 
     Take as long as you need to get the value feeling ''correct'' before continuing
-    to the next stage - the song can be restarted each time it reaches the end.'
+    to the next stage by pressing ''Spacebar'' - the song can be restarted each time
+    it reaches the end.'
 --- !u!222 &1303958275
 CanvasRenderer:
   m_ObjectHideFlags: 0

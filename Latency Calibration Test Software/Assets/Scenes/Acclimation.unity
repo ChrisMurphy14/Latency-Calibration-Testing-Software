@@ -1448,7 +1448,9 @@ MonoBehaviour:
     your score (notes hit vs. missed) becomes roughly consistent.
 
 
-    You will be given the option to either replay or continue each time the song finishes.'
+    Press ''Spacebar'' when you are ready to continue to the next testing stage -
+    otherwise, you will be given the option to either replay or continue each time
+    the song finishes.'
 --- !u!222 &1303958275
 CanvasRenderer:
   m_ObjectHideFlags: 0

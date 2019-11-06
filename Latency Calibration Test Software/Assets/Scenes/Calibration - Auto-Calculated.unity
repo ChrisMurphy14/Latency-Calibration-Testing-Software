@@ -150,7 +150,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 385533794}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &88343580
 MonoBehaviour:
@@ -186,89 +186,6 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
---- !u!1 &96784974
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 96784975}
-  - component: {fileID: 96784977}
-  - component: {fileID: 96784976}
-  m_Layer: 5
-  m_Name: Song Completed Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &96784975
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 96784974}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 385533794}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 230, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &96784976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 96784974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
-    m_LineSpacing: 1
-  m_Text: 'Song complete!
-
-    If the latency offset value feels ''correct'', press ''Spacebar'' to continue
-
-    If you want to continue adjusting the value, press ''R'' to restart the song'
---- !u!222 &96784977
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 96784974}
-  m_CullTransparentMesh: 0
 --- !u!1 &194312961
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,7 +216,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 385533794}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -348,85 +265,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194312961}
   m_CullTransparentMesh: 0
---- !u!1 &202284712
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 202284713}
-  - component: {fileID: 202284715}
-  - component: {fileID: 202284714}
-  m_Layer: 5
-  m_Name: Song Start Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &202284713
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 202284712}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 385533794}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 230, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &202284714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 202284712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
-    m_LineSpacing: 1
-  m_Text: Press 'R' to start the song
---- !u!222 &202284715
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 202284712}
-  m_CullTransparentMesh: 0
 --- !u!1 &207529916
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,6 +308,85 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &228804401
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 228804402}
+  - component: {fileID: 228804404}
+  - component: {fileID: 228804403}
+  m_Layer: 5
+  m_Name: Test End Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &228804402
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228804401}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 385533794}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 230, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &228804403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228804401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 24
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: Test completed - press 'Spacebar' to continue
+--- !u!222 &228804404
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228804401}
+  m_CullTransparentMesh: 0
 --- !u!1 &385533790
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,16 +477,14 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 1032709182}
+  - {fileID: 228804402}
   - {fileID: 785260471}
-  - {fileID: 202284713}
-  - {fileID: 96784975}
-  - {fileID: 851978985}
-  - {fileID: 1998651750}
   - {fileID: 194312962}
   - {fileID: 815672698}
   - {fileID: 88343579}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -672,7 +587,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &729359081
+--- !u!1 &628849965
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -680,30 +595,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 729359084}
-  - component: {fileID: 729359083}
-  - component: {fileID: 729359085}
-  - component: {fileID: 729359086}
+  - component: {fileID: 628849968}
+  - component: {fileID: 628849967}
+  - component: {fileID: 628849966}
   m_Layer: 0
-  m_Name: Beat-Match Calibration Music Player
-  m_TagString: MusicPlayer
+  m_Name: Latency Auto-Calibrator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!82 &729359083
+--- !u!114 &628849966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628849965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba36cf770fc81e6419b77cf056758159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TestStartText: {fileID: 1032709180}
+  TestEndText: {fileID: 228804403}
+  LatencyOffsetText: {fileID: 194312963}
+  BPM: 140
+  LatencyOffset: 0
+  LatencyAdjustmentMagnitude: 0.05
+  LatencyUpperBound: 0.5
+  LatencyLowerBound: -0.5
+  TestLengthInBeats: 64
+--- !u!82 &628849967
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 729359081}
+  m_GameObject: {fileID: 628849965}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 281a38793c306e5438c39c37f8532972, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.05
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -787,13 +722,13 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!4 &729359084
+--- !u!4 &628849968
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 729359081}
+  m_GameObject: {fileID: 628849965}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -801,49 +736,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &729359085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 729359081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2369746b70aec4dbfc7c588bddaacd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DestroyAllPromptsOnOffsetValueChange: 1
-  AdjustmentMagnitude: 0.05
-  UpperBound: 0.5
-  LowerBound: -0.5
---- !u!114 &729359086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 729359081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5df5724a88ec1bb4c80818bc8d596ff5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InputHitboxes:
-  - {fileID: 1982525433}
-  SongToPlay: {fileID: 877413406}
-  NotesHitText: {fileID: 851978986}
-  NotesMissedText: {fileID: 1998651751}
-  LatencyOffsetText: {fileID: 194312963}
-  AverageInputOffsetText: {fileID: 815672699}
-  SongStartText: {fileID: 202284714}
-  SongCompletedText: {fileID: 96784976}
-  CanReplay: 1
-  InputWindowDuration: 0.1
-  InputRefractoryDuration: 0.05
-  NotePromptTravelDuration: 2
-  LatencyOffset: 0
-  PauseBeforeStartSpawningPrompts: 1
 --- !u!1 &785260468
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,16 +787,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Test Stage 4a - Latency Calibration (Type B):
-
-    Tap the ''W'' and ''S'' keys to increase/decrease the latency offset value until
-    the note prompts feel like they''re hitting the arrows in sync with each beat
-    of the music.
-
-
-    Take as long as you need to get the value feeling ''correct'' before continuing
-    to the next stage by pressing ''Spacebar'' - the song can be restarted each time
-    it reaches the end.'
+  m_Text: "Test Stage 5a - Latency Calibration (Type C):\nTap the 'W' and 'S' keys
+    to increase/decrease the latency offset value until \n\nTake as long as you need
+    to get the value feeling 'correct' before continuing to the next stage by pressing
+    'Spacebar'."
 --- !u!222 &785260470
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -925,7 +811,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 385533794}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -962,7 +848,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 385533794}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -1011,7 +897,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 815672697}
   m_CullTransparentMesh: 0
---- !u!1 &851978984
+--- !u!1 &1032709179
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1019,42 +905,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 851978985}
-  - component: {fileID: 851978987}
-  - component: {fileID: 851978986}
+  - component: {fileID: 1032709182}
+  - component: {fileID: 1032709181}
+  - component: {fileID: 1032709180}
   m_Layer: 5
-  m_Name: Notes Hit Text
+  m_Name: Test Start Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &851978985
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 851978984}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 385533794}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 140, y: -34}
-  m_SizeDelta: {x: 230, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &851978986
+--- !u!114 &1032709180
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 851978984}
+  m_GameObject: {fileID: 1032709179}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -1075,287 +942,40 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Notes Hit: 0'
---- !u!222 &851978987
+  m_Text: Press 'R' to start the test
+--- !u!222 &1032709181
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 851978984}
+  m_GameObject: {fileID: 1032709179}
   m_CullTransparentMesh: 0
---- !u!1 &877413405
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 877413407}
-  - component: {fileID: 877413406}
-  m_Layer: 0
-  m_Name: Song - Grave Throbbing
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &877413406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 877413405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78c0cbf260825ff4b8e8f73dcc952c58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AudioTrack: {fileID: 8300000, guid: 222b0337d5ce8084d96238daef4d3a16, type: 3}
-  Notes:
-  - Pitch: 0
-    BeatPosInSong: 33
-  - Pitch: 0
-    BeatPosInSong: 41
-  - Pitch: 0
-    BeatPosInSong: 49
-  - Pitch: 0
-    BeatPosInSong: 57
-  - Pitch: 1
-    BeatPosInSong: 34
-  - Pitch: 1
-    BeatPosInSong: 42
-  - Pitch: 1
-    BeatPosInSong: 50
-  - Pitch: 1
-    BeatPosInSong: 58
-  - Pitch: 1
-    BeatPosInSong: 36
-  - Pitch: 1
-    BeatPosInSong: 44
-  - Pitch: 1
-    BeatPosInSong: 52
-  - Pitch: 1
-    BeatPosInSong: 60
-  - Pitch: 2
-    BeatPosInSong: 37
-  - Pitch: 2
-    BeatPosInSong: 45
-  - Pitch: 2
-    BeatPosInSong: 53
-  - Pitch: 2
-    BeatPosInSong: 61
-  - Pitch: 2
-    BeatPosInSong: 63
-  - Pitch: 0
-    BeatPosInSong: 64
-  - Pitch: 1
-    BeatPosInSong: 65
-  - Pitch: 2
-    BeatPosInSong: 67
-  - Pitch: 2
-    BeatPosInSong: 70
-  - Pitch: 0
-    BeatPosInSong: 72
-  - Pitch: 1
-    BeatPosInSong: 73.5
-  - Pitch: 2
-    BeatPosInSong: 75
-  - Pitch: 2
-    BeatPosInSong: 78
-  - Pitch: 1
-    BeatPosInSong: 78.5
-  - Pitch: 0
-    BeatPosInSong: 80
-  - Pitch: 1
-    BeatPosInSong: 81
-  - Pitch: 2
-    BeatPosInSong: 83
-  - Pitch: 2
-    BeatPosInSong: 86
-  - Pitch: 0
-    BeatPosInSong: 86.5
-  - Pitch: 1
-    BeatPosInSong: 87
-  - Pitch: 2
-    BeatPosInSong: 87.5
-  - Pitch: 2
-    BeatPosInSong: 88
-  - Pitch: 2
-    BeatPosInSong: 89.5
-  - Pitch: 1
-    BeatPosInSong: 89.75
-  - Pitch: 0
-    BeatPosInSong: 90
-  - Pitch: 1
-    BeatPosInSong: 91
-  - Pitch: 2
-    BeatPosInSong: 92.5
-  - Pitch: 1
-    BeatPosInSong: 92.75
-  - Pitch: 0
-    BeatPosInSong: 93
-  - Pitch: 0
-    BeatPosInSong: 94
-  - Pitch: 1
-    BeatPosInSong: 94.5
-  - Pitch: 1
-    BeatPosInSong: 95
-  - Pitch: 2
-    BeatPosInSong: 95.5
-  - Pitch: 1
-    BeatPosInSong: 96
-  - Pitch: 2
-    BeatPosInSong: 102
-  - Pitch: 1
-    BeatPosInSong: 104
-  - Pitch: 0
-    BeatPosInSong: 109
-  - Pitch: 1
-    BeatPosInSong: 110
-  - Pitch: 2
-    BeatPosInSong: 111
-  - Pitch: 0
-    BeatPosInSong: 112
-  - Pitch: 1
-    BeatPosInSong: 114
-  - Pitch: 2
-    BeatPosInSong: 115
-  - Pitch: 1
-    BeatPosInSong: 117.5
-  - Pitch: 2
-    BeatPosInSong: 118
-  - Pitch: 2
-    BeatPosInSong: 119
-  - Pitch: 1
-    BeatPosInSong: 120
-  - Pitch: 0
-    BeatPosInSong: 123.5
-  - Pitch: 1
-    BeatPosInSong: 123.75
-  - Pitch: 2
-    BeatPosInSong: 124
-  - Pitch: 1
-    BeatPosInSong: 124.5
-  - Pitch: 1
-    BeatPosInSong: 126.5
-  - Pitch: 2
-    BeatPosInSong: 127
-  BPM: 140
-  SongDurationInBeats: 128
---- !u!4 &877413407
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 877413405}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1982525433 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2131274294053564507, guid: 1b5688c08873acb44ae8f6738381d679,
-    type: 3}
-  m_PrefabInstance: {fileID: 2131274293877144956}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93565ba60f69e3b4dac3d51f03d59a7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &1998651749
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1998651750}
-  - component: {fileID: 1998651752}
-  - component: {fileID: 1998651751}
-  m_Layer: 5
-  m_Name: Notes Missed Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1998651750
+--- !u!224 &1032709182
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1998651749}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 1032709179}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 385533794}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 140, y: -64}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 230, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1998651751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1998651749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
-    m_Alignment: 3
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 1
-    m_LineSpacing: 1
-  m_Text: 'Notes Missed: 0'
---- !u!222 &1998651752
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1998651749}
-  m_CullTransparentMesh: 0
 --- !u!1001 &2131274293877144956
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1411,7 +1031,7 @@ PrefabInstance:
     - target: {fileID: 2131274294053564506, guid: 1b5688c08873acb44ae8f6738381d679,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2131274294053564506, guid: 1b5688c08873acb44ae8f6738381d679,
         type: 3}

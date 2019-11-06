@@ -1,7 +1,7 @@
 ﻿//////////////////////////////////////////////////
 // Author:              Chris Murphy
 // Date created:        30.10.19
-// Date last edited:    05.11.19
+// Date last edited:    06.11.19
 //////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
@@ -18,7 +18,7 @@ public class TestManager : MonoBehaviour
     private MusicPlayer currentSceneMusicPlayer;
     private static TestManager instance; // Used to ensure that if a scene with another TestManager is loaded, the instance that existed in the previous scene persists while the newer version is destroyed.
     private bool readyToLoadScene = false;
-    private bool calibrationSceneLoadedOnce;
+    private bool calibrationSceneLoadedOnce = false; // Used to tell if a calibration scene has already been loaded once, in which case the test manager latency offset value will be carried over.
     private float latencyOffset; // The current latency offset value to be carried between scenes.
 
     private void Awake()
@@ -39,13 +39,20 @@ public class TestManager : MonoBehaviour
         {
             if (!currentSceneMusicPlayer || currentSceneMusicPlayer && currentSceneMusicPlayer.IsSongCompleted)
                 readyToLoadScene = true;
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (SceneManager.GetActiveScene().name == "Acclimation" || SceneManager.GetActiveScene().name == "Calibration - Beat Matching" ||
+                    SceneManager.GetActiveScene().name == "Calibration - Gameplay")
+                    LoadNextSceneInOrder();
+            }
         }
 
         if (readyToLoadScene)
         {
             if (Input.GetKeyDown(KeyCode.Space))
                 LoadNextSceneInOrder();
-            else if (Input.GetKeyDown(KeyCode.R) && currentSceneMusicPlayer.CanReplay)
+            else if (Input.GetKeyDown(KeyCode.R) && currentSceneMusicPlayer && currentSceneMusicPlayer.CanReplay)
                 ReloadCurrentScene();
         }
     }
@@ -53,17 +60,12 @@ public class TestManager : MonoBehaviour
     private void LoadNextSceneInOrder()
     {
         if (readyToLoadScene)
-        {
             readyToLoadScene = false;
 
-            if (currentSceneMusicPlayer)
-            {
-                latencyOffset = currentSceneMusicPlayer.LatencyOffset;
-                Debug.Log("Latency offset set to: " + latencyOffset);
-            }
+        if (currentSceneMusicPlayer)        
+            latencyOffset = currentSceneMusicPlayer.LatencyOffset;     
 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     private void ReloadCurrentScene()
@@ -84,8 +86,6 @@ public class TestManager : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("MusicPlayer"))
         {
             currentSceneMusicPlayer = GameObject.FindGameObjectWithTag("MusicPlayer").GetComponent<MusicPlayer>();
-
-            
 
             if (SceneManager.GetActiveScene().name == "Calibration - Gameplay" && calibrationSceneLoadedOnce ||
                 SceneManager.GetActiveScene().name == "Gameplay - Gameplay" ||
