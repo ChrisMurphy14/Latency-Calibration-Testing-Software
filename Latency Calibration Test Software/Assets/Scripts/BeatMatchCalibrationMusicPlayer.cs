@@ -1,7 +1,7 @@
 ﻿//////////////////////////////////////////////////
 // Author:              Chris Murphy
 // Date created:        05.11.19
-// Date last edited:    05.11.19
+// Date last edited:    14.11.19
 //////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
@@ -34,6 +34,7 @@ public class BeatMatchCalibrationMusicPlayer : MusicPlayer
         }
     }
 
+    // Overrides the prompt spawning function to continually spawn prompts that will arrive in time with every beat.
     protected override void UpdatePromptSpawning()
     {
         float arrivalPosInSeconds = (nextPromptSpawnBeatCounter) * SongToPlay.SecondsPerBeat; // The song position in seconds at which the next note should arrive at the associated hitbox.

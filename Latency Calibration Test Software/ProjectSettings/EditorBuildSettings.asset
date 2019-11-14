@@ -27,6 +27,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Gameplay - Beat Matching.unity
     guid: a4e1334c34baabb45a68fdef0251bf29
   - enabled: 1
+    path: Assets/Scenes/Calibration - Auto-Calculated.unity
+    guid: 1086f735540bb3148b63e36b1a1e5b00
+  - enabled: 1
+    path: Assets/Scenes/Gameplay - Auto-Calculated.unity
+    guid: c8ed96a7e3b186c44a0aa776e0c528f2
+  - enabled: 1
     path: Assets/Scenes/Finish.unity
     guid: de496d1c783124e4e86e7e8b2d491a4e
   m_configObjects: {}

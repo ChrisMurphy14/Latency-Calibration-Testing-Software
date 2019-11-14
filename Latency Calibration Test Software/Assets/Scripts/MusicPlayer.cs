@@ -1,7 +1,7 @@
 ﻿//////////////////////////////////////////////////
 // Author:              Chris Murphy
 // Date created:        30.09.19
-// Date last edited:    05.11.19
+// Date last edited:    14.11.19
 //////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
@@ -60,6 +60,12 @@ public class MusicPlayer : MonoBehaviour
         }
     }
 
+    // The property used to get the total number of prompts in the song.
+    public uint TotalPromptsCount
+    {
+        get { return totalNotesCount; }
+    }
+
     // The property used to get the total number of note prompts that have been hit by all of the input hitboxes.
     public uint TotalPromptsHitCount
     {
@@ -91,7 +97,7 @@ public class MusicPlayer : MonoBehaviour
     protected float songPosInSeconds; // The current play position of the song in seconds.    
     protected float songPosInBeats; // The current play position of the song in beats.   
     protected float songStartTime;  // The time value when the song started playing.    
-    protected int prevBeatCount; // DEBUG
+    protected int prevBeatCount; // The count of the most recent beat.
     protected uint totalNotesCount; // The total number of note prompts in the assigned song. 
 
     protected void Awake()
@@ -140,9 +146,7 @@ public class MusicPlayer : MonoBehaviour
 
             if (songPosInBeats >= SongToPlay.SongDurationInBeats && !IsSongCompleted)
                 EndSong();            
-
-            //if ((int)songPosInBeats > prevBeatCount)
-            //    Debug.Log("Beat: " + (int)songPosInBeats); // DEBUG        
+  
             prevBeatCount = (int)songPosInBeats;
         }        
     }

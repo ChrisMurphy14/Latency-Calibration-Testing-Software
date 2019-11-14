@@ -473,7 +473,7 @@ GameObject:
   - component: {fileID: 2019472323}
   m_Layer: 0
   m_Name: Test Manager
-  m_TagString: Untagged
+  m_TagString: TestManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -490,7 +490,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecabdf34658864944ac0fbd8afd75a51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneOrder: 010000000200000003000000
 --- !u!4 &2019472324
 Transform:
   m_ObjectHideFlags: 0

@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\AutoCalibration.cs" />
     <Compile Include="Assets\Scripts\BeatMatchCalibrationMusicPlayer.cs" />
+    <Compile Include="Assets\Scripts\DisplayTestStats.cs" />
     <Compile Include="Assets\Scripts\LatencyOffsetPlayerChange.cs" />
     <Compile Include="Assets\Scripts\MusicPlayer.cs" />
     <Compile Include="Assets\Scripts\NoteInputHitbox.cs" />

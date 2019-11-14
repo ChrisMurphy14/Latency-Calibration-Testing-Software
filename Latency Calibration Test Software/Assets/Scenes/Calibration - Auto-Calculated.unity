@@ -150,7 +150,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 385533794}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &88343580
 MonoBehaviour:
@@ -186,85 +186,6 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
---- !u!1 &194312961
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 194312962}
-  - component: {fileID: 194312964}
-  - component: {fileID: 194312963}
-  m_Layer: 5
-  m_Name: Latency Offset Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &194312962
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 194312961}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 385533794}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 140, y: -94}
-  m_SizeDelta: {x: 230, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &194312963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 194312961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
-    m_Alignment: 3
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
-    m_LineSpacing: 1
-  m_Text: 'Latency Offset: 0'
---- !u!222 &194312964
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 194312961}
-  m_CullTransparentMesh: 0
 --- !u!1 &207529916
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,7 +198,7 @@ GameObject:
   - component: {fileID: 207529917}
   m_Layer: 0
   m_Name: Test Manager
-  m_TagString: Untagged
+  m_TagString: TestManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -320,7 +241,7 @@ GameObject:
   - component: {fileID: 228804404}
   - component: {fileID: 228804403}
   m_Layer: 5
-  m_Name: Test End Text
+  m_Name: Calibration End Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -378,7 +299,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Test completed - press 'Spacebar' to continue
+  m_Text: Calibration complete - press 'Spacebar' to continue
 --- !u!222 &228804404
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -479,9 +400,8 @@ RectTransform:
   m_Children:
   - {fileID: 1032709182}
   - {fileID: 228804402}
+  - {fileID: 858284121}
   - {fileID: 785260471}
-  - {fileID: 194312962}
-  - {fileID: 815672698}
   - {fileID: 88343579}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -540,7 +460,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.074509814, g: 0.23529412, b: 0.23529412, a: 0}
+  m_BackGroundColor: {r: 0.23529412, g: 0.21199726, b: 0.074509814, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -600,7 +520,7 @@ GameObject:
   - component: {fileID: 628849966}
   m_Layer: 0
   m_Name: Latency Auto-Calibrator
-  m_TagString: Untagged
+  m_TagString: AutoCalibrator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -617,14 +537,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba36cf770fc81e6419b77cf056758159, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IntroBeat: {fileID: 8300000, guid: 481e3d45eb9e8104ba4bf2ed2f801eaf, type: 3}
+  TestBeat: {fileID: 8300000, guid: 281a38793c306e5438c39c37f8532972, type: 3}
   TestStartText: {fileID: 1032709180}
+  TestCountdownText: {fileID: 858284122}
   TestEndText: {fileID: 228804403}
-  LatencyOffsetText: {fileID: 194312963}
+  InputKey: 273
   BPM: 140
-  LatencyOffset: 0
-  LatencyAdjustmentMagnitude: 0.05
-  LatencyUpperBound: 0.5
-  LatencyLowerBound: -0.5
+  IntroBeatCount: 9
   TestLengthInBeats: 64
 --- !u!82 &628849967
 AudioSource:
@@ -787,10 +707,20 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Test Stage 5a - Latency Calibration (Type C):\nTap the 'W' and 'S' keys
-    to increase/decrease the latency offset value until \n\nTake as long as you need
-    to get the value feeling 'correct' before continuing to the next stage by pressing
-    'Spacebar'."
+  m_Text: 'Test Stage 5a - Latency Calibration (Type C):
+
+    For this latency calibration method, the process is as follows:
+
+
+    1) A metronome will initially play for 8 beats so you can get the rhythm
+
+
+    2) The metronome will continue playing for 64 beats during which you will press
+    the ''Up'' arrow key in time to the constant beat
+
+
+    3) Once completed, the latency offset will be automatically calculated according
+    to the average offset of each input from each beat'
 --- !u!222 &785260470
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -811,14 +741,14 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 385533794}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -284, y: -34}
   m_SizeDelta: {x: 518.8, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &815672697
+--- !u!1 &858284120
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -826,42 +756,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 815672698}
-  - component: {fileID: 815672700}
-  - component: {fileID: 815672699}
+  - component: {fileID: 858284121}
+  - component: {fileID: 858284123}
+  - component: {fileID: 858284122}
   m_Layer: 5
-  m_Name: Average Input Offset Text
+  m_Name: Calibration Countdown Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &815672698
+--- !u!224 &858284121
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 815672697}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 858284120}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 385533794}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 140, y: -124}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 230, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &815672699
+--- !u!114 &858284122
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 815672697}
+  m_GameObject: {fileID: 858284120}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -882,20 +812,20 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Average Input Offset (Debug): 0'
---- !u!222 &815672700
+  m_Text: 0
+--- !u!222 &858284123
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 815672697}
+  m_GameObject: {fileID: 858284120}
   m_CullTransparentMesh: 0
 --- !u!1 &1032709179
 GameObject:
@@ -909,7 +839,7 @@ GameObject:
   - component: {fileID: 1032709181}
   - component: {fileID: 1032709180}
   m_Layer: 5
-  m_Name: Test Start Text
+  m_Name: Calibration Start Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -948,7 +878,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Press 'R' to start the test
+  m_Text: Press 'R' to start the calibration process
 --- !u!222 &1032709181
 CanvasRenderer:
   m_ObjectHideFlags: 0
