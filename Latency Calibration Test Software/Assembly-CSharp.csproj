@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\NoteInputPrompt.cs" />
     <Compile Include="Assets\Scripts\Shake2D.cs" />
     <Compile Include="Assets\Scripts\Song.cs" />
+    <Compile Include="Assets\Scripts\TestData.cs" />
     <Compile Include="Assets\Scripts\TestManager.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />

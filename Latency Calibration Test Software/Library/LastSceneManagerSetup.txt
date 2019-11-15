@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Calibration - Auto-Calculated.unity
+- path: Assets/Scenes/Calibration - Beat Matching.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

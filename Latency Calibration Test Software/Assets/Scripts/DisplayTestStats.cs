@@ -1,7 +1,7 @@
 ﻿//////////////////////////////////////////////////
 // Author:              Chris Murphy
 // Date created:        14.11.19
-// Date last edited:    14.11.19
+// Date last edited:    15.11.19
 //////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
@@ -23,25 +23,28 @@ public class DisplayTestStats : MonoBehaviour
 
     private void Start()
     {
-        TestManager testManager = GameObject.FindGameObjectWithTag("TestManager").GetComponent<TestManager>();
-
-        uiText.text += "NO LATENCY OFFSET \n";       
-        uiText.text += "Note prompts hit percentage: " + RoundToTwoDecimalPlaces(testManager.TestData.NoLatencyOffset.NotePromptsHitPercentage) + '\n';
-        uiText.text += "Average input offset from prompts: " + RoundToTwoDecimalPlaces(testManager.TestData.NoLatencyOffset.AverageNotePromptInputOffset) + '\n';
-        uiText.text += '\n';
-
-        DisplayStatsForCalibrationTechnique(testManager.TestData.Gameplay, "GAMEPLAY");
-        DisplayStatsForCalibrationTechnique(testManager.TestData.BeatMatching, "BEAT MATCHING");
-        DisplayStatsForCalibrationTechnique(testManager.TestData.Gameplay, "AUTO CALCULATED");
+        DisplayAllStats();
     }
 
-    private void DisplayStatsForCalibrationTechnique(CalibrationTechniqueTestData testData, string calibrationTechniqueName)
+    private void DisplayAllStats()
     {
-        uiText.text += "Calibration technique: " + calibrationTechniqueName + '\n';
-        uiText.text += "Calibration duration: " + RoundToTwoDecimalPlaces(testData.CalibrationDuration) + '\n';
-        uiText.text += "Latency offset: " + RoundToTwoDecimalPlaces(testData.LatencyOffset) + '\n';
-        uiText.text += "Note prompts hit percentage: " + RoundToTwoDecimalPlaces(testData.NotePromptsHitPercentage) + '\n';
-        uiText.text += "Average input offset from prompts: " + RoundToTwoDecimalPlaces(testData.AverageNotePromptInputOffset) + '\n';
+        uiText.text += "Calibration type: NO LATENCY OFFSET \n";
+        uiText.text += "Note prompts hit percentage: " + RoundToTwoDecimalPlaces(TestData.NoLatencyOffset.NotePromptsHitPercentage).ToString() + '\n';
+        uiText.text += "Average input offset from prompts: " + RoundToTwoDecimalPlaces(TestData.NoLatencyOffset.AverageNotePromptInputOffset).ToString() + '\n';
+        uiText.text += '\n';
+
+        DisplayIndividualTestStats(TestData.Gameplay, "GAMEPLAY");
+        DisplayIndividualTestStats(TestData.BeatMatching, "BEAT MATCHING");
+        DisplayIndividualTestStats(TestData.AutoCalculated, "AUTO-CALCULATED");
+    }
+
+    private void DisplayIndividualTestStats(CalibrationTechniqueTestData testData, string calibrationTecnique)
+    {
+        uiText.text += "Calibration type: " + calibrationTecnique + '\n';
+        uiText.text += "Calibration duration: " + RoundToTwoDecimalPlaces(testData.CalibrationDuration).ToString() + '\n';
+        uiText.text += "Latency offset: " + RoundToTwoDecimalPlaces(testData.LatencyOffset).ToString() + '\n';
+        uiText.text += "Note prompts hit percentage: " + RoundToTwoDecimalPlaces(testData.NotePromptsHitPercentage).ToString() + '\n';
+        uiText.text += "Average input offset from prompts: " + RoundToTwoDecimalPlaces(testData.AverageNotePromptInputOffset).ToString() + '\n';
         uiText.text += '\n';
     }
 

@@ -1,7 +1,7 @@
 ﻿//////////////////////////////////////////////////
 // Author:              Chris Murphy
 // Date created:        30.10.19
-// Date last edited:    14.11.19
+// Date last edited:    15.11.19
 //////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
@@ -9,32 +9,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-// A struct used to hold the data recorded for a single latency calibration technique used.
-public struct CalibrationTechniqueTestData
-{
-    public float CalibrationDuration;
-    public float LatencyOffset;
-    public float NotePromptsHitPercentage;
-    public float AverageNotePromptInputOffset;
-}
 
-
-// The struct used to hold the test data recorded for every latency calibration technique.
-public struct OverallTestData
-{
-    public CalibrationTechniqueTestData NoLatencyOffset;
-    public CalibrationTechniqueTestData Gameplay;
-    public CalibrationTechniqueTestData BeatMatching;
-    public CalibrationTechniqueTestData AutoCalculated;
-}
 
 
 // The script for the object which persists between scenes and is used to implement the order of the test, calcalute latency offset values, and record gameplay data.
 public class TestManager : MonoBehaviour
 {
-    public OverallTestData TestData; // The struct used to store all of the recorded test data for every latency calibration technique used.
-
-
     private AutoCalibration currentSceneAutoCalibrator; // The latency auto-calibrator gameobject existing in the current scene - null if there isn't one present.
     private MusicPlayer currentSceneMusicPlayer; // The music player gameobject existing in the current scene - null if there isn't one present.    
     private static TestManager instance; // Used to ensure that if a scene with another TestManager is loaded, the instance that existed in the previous scene persists while the newer version is destroyed.
@@ -82,8 +62,6 @@ public class TestManager : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Calibration - Gameplay" || SceneManager.GetActiveScene().name == "Calibration - Beat Matching" ||
             SceneManager.GetActiveScene().name == "Calibration - Auto-Calculated")
             calibrationDurationTimer += Time.deltaTime;
-
-        Debug.Log("Calibration timer: " + calibrationDurationTimer);
     }
 
     private void LoadNextSceneInOrder()
@@ -123,11 +101,9 @@ public class TestManager : MonoBehaviour
     {
         switch (SceneManager.GetActiveScene().name)
         {
-            case "No Latency":
+            case "No Latency Offset":
                 {
-                    TestData.NoLatencyOffset.CalibrationDuration = 0.0f;
-                    TestData.NoLatencyOffset.LatencyOffset = 0.0f;
-                    TestData.NoLatencyOffset.NotePromptsHitPercentage = currentSceneMusicPlayer.TotalPromptsHitCount / currentSceneMusicPlayer.TotalPromptsCount;
+                    TestData.NoLatencyOffset.NotePromptsHitPercentage = (float)currentSceneMusicPlayer.TotalPromptsHitCount / (float)currentSceneMusicPlayer.TotalPromptsCount;
                     TestData.NoLatencyOffset.AverageNotePromptInputOffset = currentSceneMusicPlayer.AverageClosestInputOffset;
                     break;
                 }
@@ -139,8 +115,8 @@ public class TestManager : MonoBehaviour
                 }
             case "Gameplay - Gameplay":
                 {
-                    TestData.Gameplay.NotePromptsHitPercentage = currentSceneMusicPlayer.TotalPromptsHitCount / currentSceneMusicPlayer.TotalPromptsCount;
-                    TestData.Gameplay.LatencyOffset = latencyOffset;
+                    TestData.Gameplay.NotePromptsHitPercentage = (float)currentSceneMusicPlayer.TotalPromptsHitCount / (float)currentSceneMusicPlayer.TotalPromptsCount;
+                    TestData.Gameplay.AverageNotePromptInputOffset = currentSceneMusicPlayer.AverageClosestInputOffset;
                     break;
                 }
             case "Calibration - Beat Matching":
@@ -151,8 +127,8 @@ public class TestManager : MonoBehaviour
                 }
             case "Gameplay - Beat Matching":
                 {
-                    TestData.BeatMatching.NotePromptsHitPercentage = currentSceneMusicPlayer.TotalPromptsHitCount / currentSceneMusicPlayer.TotalPromptsCount;
-                    TestData.BeatMatching.LatencyOffset = latencyOffset;
+                    TestData.BeatMatching.NotePromptsHitPercentage = (float)currentSceneMusicPlayer.TotalPromptsHitCount / (float)currentSceneMusicPlayer.TotalPromptsCount;
+                    TestData.BeatMatching.AverageNotePromptInputOffset = currentSceneMusicPlayer.AverageClosestInputOffset;
                     break;
                 }
             case "Calibration - Auto-Calculated":
@@ -163,12 +139,10 @@ public class TestManager : MonoBehaviour
                 }
             case "Gameplay - Auto-Calculated":
                 {
-                    TestData.AutoCalculated.NotePromptsHitPercentage = currentSceneMusicPlayer.TotalPromptsHitCount / currentSceneMusicPlayer.TotalPromptsCount;
-                    TestData.AutoCalculated.LatencyOffset = latencyOffset;
+                    TestData.AutoCalculated.NotePromptsHitPercentage = (float)currentSceneMusicPlayer.TotalPromptsHitCount / (float)currentSceneMusicPlayer.TotalPromptsCount;
+                    TestData.AutoCalculated.AverageNotePromptInputOffset = currentSceneMusicPlayer.AverageClosestInputOffset;
                     break;
                 }
-            default:
-                break;
         }
     }
 
