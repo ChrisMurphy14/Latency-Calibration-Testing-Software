@@ -1,7 +1,7 @@
 ﻿//////////////////////////////////////////////////
 // Author:              Chris Murphy
 // Date created:        30.10.19
-// Date last edited:    15.11.19
+// Date last edited:    16.11.19
 //////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
@@ -9,13 +9,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-
-
-
 // The script for the object which persists between scenes and is used to implement the order of the test, calcalute latency offset values, and record gameplay data.
 public class TestManager : MonoBehaviour
 {
-    private AutoCalibration currentSceneAutoCalibrator; // The latency auto-calibrator gameobject existing in the current scene - null if there isn't one present.
+    private AutoCalibration currentSceneAutoCalibrator; // The latency auto-calibrator gameobject existing in the current scene - null if there isn't one present.   
     private MusicPlayer currentSceneMusicPlayer; // The music player gameobject existing in the current scene - null if there isn't one present.    
     private static TestManager instance; // Used to ensure that if a scene with another TestManager is loaded, the instance that existed in the previous scene persists while the newer version is destroyed.
     private bool readyToLoadNextScene;
@@ -37,6 +34,9 @@ public class TestManager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
+
         if (!readyToLoadNextScene)
         {
             if (!currentSceneMusicPlayer && !currentSceneAutoCalibrator || currentSceneMusicPlayer && currentSceneMusicPlayer.IsSongCompleted || currentSceneAutoCalibrator && currentSceneAutoCalibrator.CalibrationCompleted)
@@ -45,7 +45,7 @@ public class TestManager : MonoBehaviour
             // Allows the player to proceed to the next scene at any time if the following scenes are active.
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (SceneManager.GetActiveScene().name == "Acclimation" || SceneManager.GetActiveScene().name == "Calibration - Beat Matching" ||
+                if (SceneManager.GetActiveScene().name == "Calibration - Beat Matching" ||
                     SceneManager.GetActiveScene().name == "Calibration - Gameplay")
                     LoadNextSceneInOrder();
             }

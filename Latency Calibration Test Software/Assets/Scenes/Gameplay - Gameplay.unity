@@ -284,6 +284,17 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 2131274294053564507, guid: 1b5688c08873acb44ae8f6738381d679,
+        type: 3}
+      propertyPath: ActivateKeycode
+      value: 276
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131274294053564507, guid: 1b5688c08873acb44ae8f6738381d679,
+        type: 3}
+      propertyPath: InputPromptPrefab
+      value: 
+      objectReference: {fileID: 429097088215771083, guid: 05eb30c5e9de5a740a2996b09160da8d,
+        type: 3}
     - target: {fileID: 2131274294053564506, guid: 1b5688c08873acb44ae8f6738381d679,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -339,17 +350,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: 2131274294053564507, guid: 1b5688c08873acb44ae8f6738381d679,
-        type: 3}
-      propertyPath: ActivateKeycode
-      value: 276
-      objectReference: {fileID: 0}
-    - target: {fileID: 2131274294053564507, guid: 1b5688c08873acb44ae8f6738381d679,
-        type: 3}
-      propertyPath: InputPromptPrefab
-      value: 
-      objectReference: {fileID: 429097088215771083, guid: 05eb30c5e9de5a740a2996b09160da8d,
-        type: 3}
     - target: {fileID: 2131274294053564500, guid: 1b5688c08873acb44ae8f6738381d679,
         type: 3}
       propertyPath: m_Size.x
@@ -396,7 +396,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 140, y: -94}
+  m_AnchoredPosition: {x: 1758, y: -94}
   m_SizeDelta: {x: 230, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &194312963
@@ -426,7 +426,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 2
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
@@ -458,6 +458,22 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 2131274294053564507, guid: 1b5688c08873acb44ae8f6738381d679,
+        type: 3}
+      propertyPath: ActivateKeycode
+      value: 275
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131274294053564507, guid: 1b5688c08873acb44ae8f6738381d679,
+        type: 3}
+      propertyPath: InputPromptsPitch
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131274294053564507, guid: 1b5688c08873acb44ae8f6738381d679,
+        type: 3}
+      propertyPath: InputPromptPrefab
+      value: 
+      objectReference: {fileID: 997677420407942512, guid: cbe06927247ffae45935336c83d061e2,
+        type: 3}
     - target: {fileID: 2131274294053564506, guid: 1b5688c08873acb44ae8f6738381d679,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -513,22 +529,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 270
       objectReference: {fileID: 0}
-    - target: {fileID: 2131274294053564507, guid: 1b5688c08873acb44ae8f6738381d679,
-        type: 3}
-      propertyPath: ActivateKeycode
-      value: 275
-      objectReference: {fileID: 0}
-    - target: {fileID: 2131274294053564507, guid: 1b5688c08873acb44ae8f6738381d679,
-        type: 3}
-      propertyPath: InputPromptsPitch
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2131274294053564507, guid: 1b5688c08873acb44ae8f6738381d679,
-        type: 3}
-      propertyPath: InputPromptPrefab
-      value: 
-      objectReference: {fileID: 997677420407942512, guid: cbe06927247ffae45935336c83d061e2,
-        type: 3}
     - target: {fileID: 2131274294053564500, guid: 1b5688c08873acb44ae8f6738381d679,
         type: 3}
       propertyPath: m_Size.x
@@ -668,10 +668,10 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1012,7 +1012,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 140, y: -124}
+  m_AnchoredPosition: {x: 1758, y: -124}
   m_SizeDelta: {x: 230, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &815672699
@@ -1042,7 +1042,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 2
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
@@ -1091,7 +1091,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 140, y: -34}
+  m_AnchoredPosition: {x: 1758, y: -34}
   m_SizeDelta: {x: 230, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &851978986
@@ -1121,7 +1121,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 2
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1400,7 +1400,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -274.6, y: -34}
+  m_AnchoredPosition: {x: -1642, y: -34}
   m_SizeDelta: {x: 500, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1303958274
@@ -1430,7 +1430,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 2
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1506,7 +1506,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 140, y: -64}
+  m_AnchoredPosition: {x: 1758, y: -64}
   m_SizeDelta: {x: 230, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1998651751
@@ -1536,7 +1536,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 2
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1568,6 +1568,17 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 2131274294053564507, guid: 1b5688c08873acb44ae8f6738381d679,
+        type: 3}
+      propertyPath: InputPromptsPitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131274294053564507, guid: 1b5688c08873acb44ae8f6738381d679,
+        type: 3}
+      propertyPath: InputPromptPrefab
+      value: 
+      objectReference: {fileID: 6291142589036069156, guid: 2d437679df569314bb739b421b365f29,
+        type: 3}
     - target: {fileID: 2131274294053564506, guid: 1b5688c08873acb44ae8f6738381d679,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1623,17 +1634,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2131274294053564507, guid: 1b5688c08873acb44ae8f6738381d679,
-        type: 3}
-      propertyPath: InputPromptsPitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2131274294053564507, guid: 1b5688c08873acb44ae8f6738381d679,
-        type: 3}
-      propertyPath: InputPromptPrefab
-      value: 
-      objectReference: {fileID: 6291142589036069156, guid: 2d437679df569314bb739b421b365f29,
-        type: 3}
     - target: {fileID: 2131274294053564500, guid: 1b5688c08873acb44ae8f6738381d679,
         type: 3}
       propertyPath: m_Size.y

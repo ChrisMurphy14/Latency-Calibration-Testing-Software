@@ -1,7 +1,7 @@
 ﻿//////////////////////////////////////////////////
 // Author:              Chris Murphy
 // Date created:        05.11.19
-// Date last edited:    05.11.19
+// Date last edited:    16.11.19
 //////////////////////////////////////////////////
 using System.Collections;
 using System.Collections.Generic;
@@ -16,12 +16,15 @@ public class LatencyOffsetPlayerChange : MonoBehaviour
     public float AdjustmentMagnitude = 0.05f; // The amount the latency offset value is adjusted by each time one of the increase/decrease keys is pressed.
     public float UpperBound = 0.5f;
     public float LowerBound = -0.5f;
+    public float backgroundColorChangeIntervalMultiplier = 1.0f; // The multiplier for amount the background color is changed each time the latency offset is altered.
 
 
+    private Color initialBackgroundColor;
     private MusicPlayer musicPlayer;
 
     private void Start()
     {
+        initialBackgroundColor = Camera.main.backgroundColor;
         musicPlayer = GetComponent<MusicPlayer>();
     }
 
@@ -47,6 +50,10 @@ public class LatencyOffsetPlayerChange : MonoBehaviour
                     Destroy(prompt);
             }
         }
+
+        Camera.main.backgroundColor = new Color(initialBackgroundColor.r + musicPlayer.LatencyOffset * backgroundColorChangeIntervalMultiplier, 
+            initialBackgroundColor.g + musicPlayer.LatencyOffset * backgroundColorChangeIntervalMultiplier,
+            initialBackgroundColor.b + musicPlayer.LatencyOffset * backgroundColorChangeIntervalMultiplier);
     }
 
     private float RoundToTwoDecimalPlaces(float number)
